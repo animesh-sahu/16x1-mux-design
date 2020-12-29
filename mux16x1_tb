@@ -1,0 +1,31 @@
+`timescale 1ns / 1ps
+
+
+module mux16x1_tb;
+
+    reg [15:0]in;
+    reg [3:0]sel;
+    wire out;
+    mux16x1 uut(in,sel,out);
+    initial
+    begin
+    in=16'h42bc; // you can select this as per your choice
+    sel=4'h0;
+    #5 sel=4'h1;
+    #5 sel=4'h2;
+    #5 sel=4'h3;
+    #5 sel=4'h4;
+    #5 sel=4'h5;
+    #5 sel=4'h6;
+    #5 sel=4'h7;
+    #5 sel=4'h8;
+    #5 sel=4'h9;
+    #5 sel=4'ha;
+    #5 sel=4'hb;
+    #5 sel=4'hc;
+    #5 sel=4'hd;
+    #5 sel=4'he;
+    #5 sel=4'hf;
+    #5 $finish;
+    end
+    endmodule
